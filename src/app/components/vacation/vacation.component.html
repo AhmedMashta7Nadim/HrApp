@@ -1,0 +1,84 @@
+<div class="container mt-0 p-3">
+    <h2 class="form-title">Vacation Form</h2>
+
+    <!-- نموذج إضافة إجازة جديدة -->
+    <form [formGroup]="VacationData">
+        <div class="row">
+            <!-- Employee Name -->
+            <div class="col-md-12 mb-3">
+                <label for="Employee" class="form-label">Employee</label>
+                <select class="form-select custom-input" id="employeeId" formControlName="employeeId" required>
+                    <option value="" disabled selected>Select Employee</option>
+                    <option *ngFor="let ee of lstEmp" [value]="ee.id">
+                        {{ ee.name }}
+                    </option>
+                </select>
+            </div>
+
+            <!-- Start and End Vacation Dates -->
+            <div class="col-md-6 mb-3">
+                <label for="startVacation">Start Vacation</label>
+                <input type="date" id="startVacation" formControlName="start_Vacation" class="form-control custom-input"
+                    required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="endVacation">End Vacation</label>
+                <input type="date" id="endVacation" formControlName="end_Vacation" class="form-control custom-input"
+                    required>
+            </div>
+
+            <!-- Leave Type -->
+            <div class="col-md-6 mb-3">
+                <label for="leave" class="form-label">Leave</label>
+                <select formControlName="leave" class="form-select custom-input" id="leave" required>
+                    <option value="Yearly_Leave">Yearly</option>
+                    <option value="Monthly_Leave">Monthly</option>
+                    <option value="Hourly_Leave">Hourly</option>
+                </select>
+            </div>
+
+            <!-- Note -->
+            <div class="col-md-6 mb-3">
+                <label for="noteBad">Note</label>
+                <textarea id="noteBad" formControlName="noteBad" class="form-control custom-input"
+                    placeholder="Enter Note"></textarea>
+            </div>
+
+            <!-- Add Vacation Button -->
+            <div class="text-center">
+                <button type="submit" (click)="addVacation()" class="btn custom-button">Add Vacation</button>
+            </div>
+        </div>
+    </form>
+
+    <h2 class="table-title mt-5">Vacation Data</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered custom-table mt-4">
+            <thead class="bg-info text-white">
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Start Vacation</th>
+                    <th>End Vacation</th>
+                    <th>Leave</th>
+                    <th>Note</th>
+                    <th>Acceptance</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (vacation of lestVacation; track $index) {
+                <tr>
+                    <td>{{ vacation.employeeId }}</td>
+                    <td>{{ vacation.start_Vacation | date:'yyyy-MM-dd' }}</td>
+                    <td>{{ vacation.end_Vacation | date:'yyyy-MM-dd' }}</td>
+                    <td>{{ vacation.leave }}</td>
+                    <td>{{ vacation.noteBad }}</td>
+                    <td>{{ vacation.acceptance ? 'Accepted' : 'Rejected' }}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" (click)="deleteVacation(vacation.id)">Delete</button>
+                    </td>
+                </tr>}
+            </tbody>
+        </table>
+    </div>
+</div>

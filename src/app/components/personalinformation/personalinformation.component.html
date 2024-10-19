@@ -1,0 +1,38 @@
+<div class="container p-3">
+    <div class="card shadow-lg border-0 rounded-lg custom-card">
+        <div class="card-header text-white text-center custom-header">
+            <h5 class="mb-0"><i class="fas fa-user-circle me-2"></i>Personal Information</h5>
+        </div>
+        <div class="card-body p-4">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong class="text-muted">UserName:</strong>
+                    <span class="text-dark">{{ Token["UserName"] }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong class="text-muted">Role:</strong>
+                    <span class="badge bg-info text-dark">{{ Token["Roll"] }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong class="text-muted">Employee ID:</strong>
+                    <span class="text-dark">{{ Token["EmployeeId"] }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong class="text-muted">Name:</strong>
+                    <span class="text-dark">{{ data["name"] }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong class="text-muted">Father:</strong>
+                    <span class="text-dark">{{ data["father"] }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong class="text-muted">Date of Employment:</strong>
+                    <span class="text-dark">{{ data["date_of_employment"] | date }}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="card-footer text-center custom-footer">
+            <small class="text-muted">Last updated {{ data["date_of_employment"] | date:'longDate' }}</small>
+        </div>
+    </div>
+</div>

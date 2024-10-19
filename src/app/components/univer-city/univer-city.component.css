@@ -1,0 +1,60 @@
+/* Styling for form titles */
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00a0ff;
+}
+
+/* Styling form fields */
+.custom-input {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.custom-input:focus {
+  border-color: #00a0ff;
+  box-shadow: 0px 0px 6px rgba(0, 160, 255, 0.5);
+}
+
+/* Styling button */
+.custom-button {
+  background-color: #00a0ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #008acb;
+}
+
+/* Styling for list items */
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item .btn {
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+/* Container styling */
+.container {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #fff;
+}

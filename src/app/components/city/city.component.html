@@ -1,0 +1,36 @@
+<div class="container p-3">
+  <h2 class="form-title mb-4">City Form</h2>
+
+  <!-- نموذج إضافة مدينة -->
+  <div class="form-group">
+    <label for="cityName" class="form-label">City Name</label>
+    <input [(ngModel)]="newCity.city" id="cityName" class="form-control custom-input" placeholder="Enter city name" />
+    <button class="btn custom-button w-100 mt-3" (click)="addCity()">Add City</button>
+  </div>
+
+  <!-- قائمة المدن -->
+  <h3 class="table-title mt-5">Cities</h3>
+  <ul class="list-group">
+    <li *ngFor="let city of cities"
+      class="list-group-item d-flex justify-content-between align-items-center custom-list-item">
+      {{ city.city }}
+      <div>
+        <button class="btn btn-outline-warning btn-sm mr-2" (click)="selectCity(city)">Edit</button>
+        <button class="btn btn-outline-danger btn-sm" (click)="confirmDeleteCity(city.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+
+  <!-- نافذة التأكيد للحذف -->
+  <div *ngIf="showConfirmation" class="dialog-container">
+    <div class="dialog-content">
+      <i class="fas fa-exclamation-circle" style="font-size: 50px; color: #ff9800;"></i>
+      <h2>Confirmation</h2>
+      <p>Are you sure you want to delete this city?</p>
+      <div class="dialog-actions">
+        <button class="btn btn-secondary" (click)="cancelDelete()">Cancel</button>
+        <button class="btn btn-danger" (click)="deleteCity()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+/* Form Title Styling */
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00a0ff;
+}
+
+/* Form Field Styling */
+.custom-input {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.custom-input:focus {
+  border-color: #00a0ff;
+  box-shadow: 0px 0px 6px rgba(0, 160, 255, 0.5);
+}
+
+/* Button Styling */
+.custom-button {
+  background-color: #00a0ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #008acb;
+}
+
+/* Table Styling */
+.custom-table th,
+.custom-table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.custom-table thead {
+  background-color: #00a0ff;
+  color: white;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Container Styling */
+.container {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #fff;
+}

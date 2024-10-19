@@ -1,0 +1,43 @@
+/* Form Title Styling */
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  
+}
+
+/* Form Field Styling */
+.custom-input {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.custom-input:focus {
+  border-color: #00a0ff;
+  box-shadow: 0px 0px 6px rgba(0, 160, 255, 0.5);
+}
+
+/* Button Styling */
+.custom-button {
+  background-color: #00a0ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #008acb;
+}
+
+/* Custom Card Styling */
+.custom-card {
+  border-radius: 15px;
+  background-color: #f8f9fa;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,94 @@
+<!-- Alert for success or failure messages -->
+<div *ngIf="alertMessage" class="alert alert-success alert-dismissible fade show alert-floating" role="alert">
+  {{ alertMessage }}
+  <button type="button" class="btn-close" (click)="closeAlert()" aria-label="Close"></button>
+</div>
+
+<!-- Form to add department -->
+<div *ngIf="ShowAdded" class="container">
+  <form [formGroup]="departmentForm" (ngSubmit)="AddDep()">
+    <div class="form-group mb-3">
+      <label for="name_Department" class="form-label">Department Name</label>
+      <input type="text" id="name_Department" class="form-control custom-input" formControlName="name_Department"
+        required>
+    </div>
+    <button type="submit" class="btn custom-button w-100" [disabled]="departmentForm.invalid">
+      <i class="fas fa-save"></i> Save
+    </button>
+  </form>
+</div>
+
+<!-- List of departments -->
+<div class="container p-3">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="table-title">Departments</h3>
+    <button class="btn custom-button" (click)="existAdded()">Add Department</button>
+  </div>
+  <div class="card">
+    <div class="card-header text-center">
+      <h4 class="mb-0">List of Departments</h4>
+    </div>
+    <div class="card-body table-responsive">
+      <table class="table table-bordered custom-table">
+        <thead>
+          <tr>
+            <th scope="col">Department ID</th>
+            <th scope="col">Department Name</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let department of departments; trackBy: trackById">
+            <th scope="row">{{ department.id }}</th>
+            <td>{{ department.name_Department }}</td>
+            <td class="text-center">
+              <button class="btn btn-primary btn-sm" (click)="viewDepartment(department)">View</button>
+              <button class="btn btn-warning btn-sm">Edit</button>
+              <button class="btn btn-danger btn-sm" (click)="confirmDelete(department.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation dialog for deletion -->
+<div *ngIf="showConfirmation" class="dialog-overlay">
+  <div class="dialog-container">
+    <div class="dialog-content">
+      <i class="fas fa-exclamation-circle dialog-icon"></i>
+      <h2>Confirmation</h2>
+      <p>Are you sure you want to delete this department?</p>
+      <div class="dialog-actions">
+        <button class="btn btn-secondary" (click)="cancelDelete()">Cancel</button>
+        <button class="btn btn-danger" (click)="deleteDepartment()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Table for employees in selected department -->
+<div class="container mt-4" *ngIf="showEmployeeDep">
+  <p>Employee Length: {{ selectedDepartment.length }}</p>
+  <table class="table table-striped table-bordered custom-table">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Father</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ee of selectedDepartment">
+        <td>{{ ee.id }}</td>
+        <td>{{ ee.name }}</td>
+        <td>{{ ee.father }}</td>
+        <td>{{ ee.lastName }}</td>
+        <td>{{ ee.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

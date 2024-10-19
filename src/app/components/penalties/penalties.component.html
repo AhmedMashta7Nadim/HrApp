@@ -1,0 +1,48 @@
+<div class="container mt-0 p-3">
+  <h2 class="form-title mb-4">Penalties Form</h2>
+
+  <!-- Form with enhanced styling -->
+  <form [formGroup]="penaltiesForm" enctype="multipart/form-data" class="custom-form">
+    <div class="row">
+      <!-- Employee ID -->
+      <div class="col-md-6 mb-3">
+        <label for="employeeId" class="form-label">Employee ID</label>
+        <select id="employeeId" formControlName="EmployeeId" class="form-select custom-input">
+          <option value="" disabled selected>Select an employee</option>
+          <option *ngFor="let ee of emps" [value]="ee.id">{{ ee.name }}</option>
+        </select>
+      </div>
+
+      <!-- Date of Penalties -->
+      <div class="col-md-6 mb-3">
+        <label for="datePenalties" class="form-label">Date of Penalties</label>
+        <input type="date" id="datePenalties" formControlName="Date_Penalties" class="form-control custom-input" />
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Price of Penalties -->
+      <div class="col-md-6 mb-3">
+        <label for="pricePenalties" class="form-label">Price of Penalties</label>
+        <input type="number" id="pricePenalties" formControlName="Price_Penalties" class="form-control custom-input"
+          step="0.01" placeholder="Enter penalty price" />
+      </div>
+
+      <!-- Reason for Penalties -->
+      <div class="col-md-6 mb-3">
+        <label for="reasonPenalties" class="form-label">Reason for Penalties</label>
+        <textarea id="reasonPenalties" formControlName="Reason_Penalties" class="form-control custom-input"
+          placeholder="Enter reason for penalty"></textarea>
+      </div>
+    </div>
+
+    <!-- Upload File -->
+    <div class="mb-3">
+      <label for="file" class="form-label">Upload File</label>
+      <input type="file" id="file" (change)="onFileChange($event)" class="form-control custom-input" />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" (click)="onSubmit()" class="btn custom-button w-100">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+<!-- Existing HTML content -->
+
+<!-- Button to Open Modal -->
+<button class="btn btn-primary mt-2" (click)="openAddEmployeeModal()">Add Employee</button>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addEmployeeModalLabel">Add New Employee</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Form to Add Employee -->
+        <div class="form-group">
+          <label for="employeeName">Name:</label>
+          <input type="text" id="employeeName" [(ngModel)]="newEmployee.name" class="form-control"
+            placeholder="Enter Name" />
+        </div>
+        <!-- Add other fields similarly -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addEmployee()">Add Employee</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Existing HTML content -->

@@ -1,0 +1,172 @@
+<!-- الشريط الجانبي للتنقل -->
+<nav class="pc-sidebar " style="background: linear-gradient(to bottom, #006fe6, #00c9a7);">
+    <div class="navbar-wrapper">
+        <div class="m-header">
+            <a href="" class="b-brand text-primary">
+                <h1 style="margin-left: 50px; color: white;">HR</h1>
+            </a>
+        </div>
+
+        <div class="navbar-content">
+            <ul class="pc-navbar">
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link"><label style="color: white;">Human Resources</label><span class="pc-arrow"><i
+                                data-feather="chevron-right" style="margin-right: 10px;color: white;"></i></span></a>
+                    <ul class="pc-submenu">
+                        <li class="pc-item pc-hasmenu">
+                            <a routerLink="employee" routerLinkActive="active-link" class="pc-link"><i
+                                    class="fas fa-user"></i> Employees</a>
+                        </li>
+                        <li class="pc-item pc-hasmenu">
+                            <a routerLink="department" routerLinkActive="active-link" class="pc-link"><i
+                                    class="fas fa-sitemap"></i> Department</a>
+                        </li>
+                        <li class="pc-item pc-hasmenu">
+                            <a routerLink="city" routerLinkActive="active-link" class="pc-link"><i
+                                    class="fas fa-city"></i> All City</a>
+                        </li>
+                        <li class="pc-item pc-hasmenu">
+                            <a routerLink="salary" routerLinkActive="active-link" class="pc-link"><i
+                                    class="fas fa-dollar-sign"></i> Salary</a>
+                        </li>
+                        <li class="pc-item pc-hasmenu">
+                            <a routerLink="unviersity" routerLinkActive="active-link" class="pc-link"><i
+                                    class="fas fa-university"></i> UnvierSity</a>
+                        </li>
+                        <li class="pc-item pc-hasmenu">
+                            <a routerLink="employeeDepartment" routerLinkActive="active-link" class="pc-link"><i
+                                    class="fas fa-users-cog"></i> Employee Department</a>
+                        </li>
+
+                        <li class="pc-item pc-hasmenu">
+                            <a routerLink="penalties" routerLinkActive="active-link" class="pc-link"><i
+                                    class="fas fa-exclamation-triangle"></i> Penalties</a>
+                        </li>
+                        <li class="pc-item pc-hasmenu">
+                            <a routerLink="rewards" routerLinkActive="active-link" class="pc-link"><i
+                                    class="fas fa-trophy"></i> Rewards</a>
+                        </li>
+                        <li class="pc-item pc-hasmenu">
+                            <a routerLink="vacation" routerLinkActive="active-link" class="pc-link"><i
+                                    class="fas fa-plane-departure"></i> Vacation</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="pc-item pc-caption">
+                    <label>Pages</label>
+                    <i class="fas fa-file-alt"></i>
+                </li>
+                <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link"><span class="pc-micon"><i class="fas fa-key"></i></span><span
+                            class="pc-mtext" style="color: white;">Authentication</span></a>
+
+                </li>
+                <li class="pc-item pc-hasmenu">
+                    <a routerLink="maintenance" routerLinkActive="active-link" class="pc-link"><span class="pc-micon"><i
+                                class="fas fa-tools"></i></span><span class="pc-mtext">Maintenance</span></a>
+
+                </li>
+                <li class="pc-item pc-caption">
+                    <label>Other</label>
+                    <i class="fas fa-ellipsis-h"></i>
+                </li>
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link" routerLinkActive="active-link" routerLink="Accounting">
+                        <span class="pc-micon">
+                            <i class="fas fa-user-plus">
+                            </i></span>
+                        <span class="pc-mtext">Add Users</span>
+                    </a>
+                </li>
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link" routerLink="download" routerLinkActive="active-link">
+                        <span class="pc-micon">
+                            <i class="fas fa-bell"></i></span>
+                        <span class="pc-mtext">Download</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="w-100 text-center">
+                <div class="badge theme-version badge rounded-pill bg-light text-dark f-12"></div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header class="pc-header " style="background: linear-gradient(to right, #006fe6, #00c9a7);">
+    <div class="header-wrapper">
+        <div class="me-auto pc-mob-drp">
+            <ul class="list-unstyled">
+                <li class="pc-h-item header-mobile-collapse">
+                    <a href="javascript:void(0);" class="pc-head-link  ms-0" id="sidebar-hide"
+                        style="background-color: white;">
+                        <i class="fas fa-bars" style="color: #006fe6;"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: center; width: fit-content;color: white;">
+            <h3 style=" color: white; margin: 0;">{{ currentTitle }}</h3>
+        </div>
+        <div class="ms-auto">
+            <ul class="list-unstyled">
+                <li class="dropdown pc-h-item">
+                    <a class="pc-head-link  dropdown-toggle arrow-none me-0"  routerLink="chat"
+                        data-bs-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false"
+                        style="background-color: #006fe6;">
+                        <i class="fas fa-comment-dots" style="color: white;"></i>
+                    </a>
+                </li>
+                <li class="dropdown pc-h-item">
+                    <a class="pc-head-link  dropdown-toggle arrow-none me-0" routerLink="Notifications"
+                        data-bs-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false"
+                        style="background-color: #006fe6;">
+                        <i class="fas fa-bell" style="color: white;"></i>
+                    </a>
+                </li>
+                <li class="dropdown pc-h-item " (click)="toggleDropdown($event)">
+                    <a class="pc-head-link  dropdown-toggle arrow-none me-0" role="button"
+                        style="background-color: #006fe6;">
+                        <i class="fas fa-user" style="color: white;"></i>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown bg-primary text-white p-3"
+                        [ngClass]="{'show': dropdownOpen}">
+                        <div class="dropdown-header">
+                            <h4 style="color: rgb(19, 19, 19);">Good Morning, <span class="small "
+                                    style="color: white;"> {{
+                                    Token["UserName"]
+                                    }}</span></h4>
+                            <h5 style="color: black;">Project : <span class="small " style="color: white;"> {{
+                                    Token["Roll"]
+                                    }}</span></h5>
+
+                            <hr>
+                            <div class="profile-notification-scroll position-relative">
+
+                                <a routerLink="personalinformation" class="dropdown-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>Profile</span>
+                                </a>
+                                <a href="" class="dropdown-item">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!-- المحتوى الرئيسي -->
+<div class="pc-container" style="background-color: white; ">
+    <app-page-routs></app-page-routs>
+</div>

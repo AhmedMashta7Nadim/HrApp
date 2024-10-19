@@ -1,0 +1,47 @@
+<div class="container mt-0 p-3">
+  <h2 class="form-title">Manage Universities</h2>
+
+  <!-- Form to Add University -->
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <label for="universityName">University Name:</label>
+      <input type="text" id="universityName" [(ngModel)]="newUniverCity.name" class="form-control custom-input"
+        placeholder="Enter University Name" />
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button class="btn custom-button" (click)="addUniverCity()">Add University</button>
+  </div>
+
+  <hr />
+
+  <!-- List of Universities -->
+  <h2 class="table-title mt-5">Universities List</h2>
+  <ul class="list-group mt-4">
+    <li *ngFor="let university of univerCities" class="list-group-item custom-input">
+      {{ university.name }}
+      <div class="float-end">
+        <button class="btn btn-warning btn-sm ms-2" (click)="selectUniverCity(university)">Edit</button>
+        <button class="btn btn-danger btn-sm" (click)="deleteUniverCity(university.id!)">Delete</button>
+      </div>
+    </li>
+  </ul>
+
+
+  <!-- Form to Update University Name -->
+  <div *ngIf="selectedUniverCity">
+    <h2 class="form-title">Edit University Name</h2>
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <label for="editUniversityName">New University Name:</label>
+        <input type="text" id="editUniversityName" [(ngModel)]="selectedUniverCity.name"
+          class="form-control custom-input" />
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="btn custom-button" (click)="updateUniverCityName()">Update University</button>
+    </div>
+  </div>
+</div>

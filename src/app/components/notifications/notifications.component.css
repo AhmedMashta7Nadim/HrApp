@@ -1,0 +1,46 @@
+.card {
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(90deg, #007bff, #6610f2);
+}
+
+.card-header {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.btn-success,
+.btn-danger {
+  display: flex;
+  align-items: center;
+}
+
+.btn i {
+  margin-right: 5px;
+}
+
+.text-success,
+.text-danger {
+  font-weight: bold;
+}
+
+.badge {
+  font-size: 0.9rem;
+}
+
+.fas {
+  margin-right: 5px;
+}

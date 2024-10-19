@@ -1,0 +1,73 @@
+/* Form Title Styling */
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00a0ff;
+}
+
+/* Custom Input Styling */
+.custom-input {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.custom-input:focus {
+  border-color: #00a0ff;
+  box-shadow: 0px 0px 6px rgba(0, 160, 255, 0.5);
+}
+
+/* Custom Button Styling */
+.custom-button {
+  background-color: #00a0ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #008acb;
+}
+
+/* Table Title Styling */
+.table-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00a0ff;
+}
+
+/* List Item Styling */
+.custom-list-item {
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+/* Confirmation Dialog Styling */
+.dialog-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.dialog-content {
+  text-align: center;
+}
+
+.dialog-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}

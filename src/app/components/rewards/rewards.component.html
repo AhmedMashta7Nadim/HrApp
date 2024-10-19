@@ -1,0 +1,80 @@
+<div class="container mt-0 p-3">
+    <h2 class="form-title">Rewards Form</h2>
+
+    <!-- نموذج إضافة مكافأة جديدة -->
+    <form [formGroup]="rewardForm" (ngSubmit)="addReward($event)" enctype="multipart/form-data">
+        <div class="row">
+            <!-- Employee Name -->
+            <div class="col-md-12 mb-3">
+                <label for="EmployeeId">Employee Name</label>
+                <select id="EmployeeId" formControlName="employeeId" class="form-control custom-input" required>
+                    <option value="">Select an employee</option>
+                    <option *ngFor="let ee of emps" [value]="ee.id">{{ ee.name }}</option>
+                </select>
+            </div>
+
+            <!-- Date of Reward and Reward Price -->
+            <div class="col-md-6 mb-3">
+                <label for="date_Rewards">Date of Reward</label>
+                <div class="input-group">
+                    <input type="date" id="date_Rewards" formControlName="date_Rewards"
+                        class="form-control custom-input" required>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="price_Rewards">Reward Price</label>
+                <input type="number" id="price_Rewards" formControlName="price_Rewards"
+                    class="form-control custom-input" placeholder="Enter Reward Price" required>
+            </div>
+
+            <!-- Reason for Reward -->
+            <div class="col-md-6 mb-3">
+                <label for="reason_Reward">Reason for Reward</label>
+                <input type="text" id="reason_Reward" formControlName="reason_Reward" class="form-control custom-input"
+                    placeholder="Enter Reason for Reward" required>
+            </div>
+
+            <!-- Attach File -->
+            <div class="col-md-6 mb-3">
+                <label for="file">Attach File</label>
+                <input type="file" id="file" class="form-control custom-input" (change)="onFileChange($event)">
+            </div>
+        </div>
+
+        <!-- Add Reward Button -->
+        <div class="text-center">
+            <button type="submit" class="btn custom-button">Add Reward</button>
+        </div>
+    </form>
+
+    <!-- جدول عرض المكافآت -->
+    <h2 class="table-title mt-5">Rewards Data</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered custom-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>EMPLOYEE ID</th>
+                    <th>DATE OF REWARD</th>
+                    <th>REWARD PRICE</th>
+                    <th>REASON FOR REWARD</th>
+                    <th>FILE PATH</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reward of rewardsList">
+                    <td>{{ reward.id }}</td>
+                    <td>{{ reward.employeeId }}</td>
+                    <td>{{ reward.date_Rewards | date:'yyyy-MM-dd' }}</td>
+                    <td>{{ reward.price_Rewards | currency }}</td>
+                    <td>{{ reward.reason_Reward }}</td>
+                    <td><a [href]="reward.path_file" target="_blank">Download</a></td>
+                    <td>
+                        <!-- يمكن إضافة أزرار الحذف والتعديل هنا -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

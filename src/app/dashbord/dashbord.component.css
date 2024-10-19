@@ -1,0 +1,29 @@
+.pc-header .dropdown-menu {
+  background: #006fe6;
+  border: none;
+  color: rgb(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .div-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+a {
+  color: white !important;
+  text-decoration: none;
+}
+.pc-link {
+  font-size: 1rem;
+}
+label {
+  color: white;
+  font-size: 1rem;
+}
+/* الروابط النشطة */
+
+.pc-sidebar .pc-link.active-link {
+  margin-left: 15px;
+}

@@ -1,0 +1,46 @@
+/* Custom Card Styling */
+.custom-card {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+/* Header Styling */
+.custom-header {
+  background-color: #00a0ff;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Body Styling */
+.list-group-item {
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+.list-group-item:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+.list-group-item strong {
+  font-size: 16px;
+}
+
+.list-group-item .badge {
+  font-size: 14px;
+}
+
+/* Footer Styling */
+.custom-footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 0 0 15px 15px;
+}
+
+.custom-footer small {
+  color: #888;
+}

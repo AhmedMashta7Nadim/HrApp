@@ -1,0 +1,36 @@
+<div *ngFor="let ee of VacationDectonary" class="mb-4">
+    <div class="card shadow-lg border-0" id="{{ ee.id }}">
+        <!-- رأس البطاقة: لون مخصص وعبارات منظمة -->
+        <div class="card-header bg-gradient-primary text-white d-flex justify-content-between align-items-center">
+            <span><i class="fas fa-user"></i> Employee: {{ ee.employeeId }}</span>
+            <span class="badge bg-info p-2">{{ ee.leave }}</span>
+        </div>
+        <!-- محتوى البطاقة: ترتيب محسّن وشرح مفصل -->
+        <div class="card-body">
+            <h5 class="card-title">
+                <i class="fas fa-calendar-alt"></i> Start Date:
+                <span class="text-success">{{ ee.start_Vacation }}</span>
+            </h5>
+            <p class="card-text">
+                <i class="fas fa-calendar-times"></i> End Date:
+                <span class="text-danger">{{ ee.end_Vacation }}</span>
+            </p>
+            <p class="card-text">
+                <i class="fas fa-hourglass-half"></i> Leave Type:
+                <strong>{{ ee.leave }}</strong>
+            </p>
+            <p class="card-text text-danger">
+                <i class="fas fa-exclamation-circle"></i> NoteBad: {{ ee.noteBad }}
+            </p>
+            <!-- أزرار تفاعلية مع أيقونات وعناصر متباعدة -->
+            <div class="d-flex justify-content-end">
+                <a (click)="UpdateOk(ee.id!)" class="btn btn-success me-2">
+                    <i class="fas fa-check"></i> قبول
+                </a>
+                <a (click)="Deleted(ee.id!)" class="btn btn-danger">
+                    <i class="fas fa-times"></i> رفض
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

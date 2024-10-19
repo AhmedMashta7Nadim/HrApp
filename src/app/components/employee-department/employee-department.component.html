@@ -1,0 +1,76 @@
+<div class="container mt-0 p-3">
+    <h2 class="form-title mb-2">Employee Form</h2>
+
+    <!-- Enhanced Form Design -->
+    <form [formGroup]="employeeDepartmint" class="custom-form">
+        <!-- EmployeeId -->
+        <div class="form-group mb-3">
+            <label for="employeeId" class="form-label">Employee ID</label>
+            <select id="employeeId" formControlName="EmployeeId" class="form-select custom-input">
+                <option *ngFor="let ee of emps; trackBy: trackByemp" [value]="ee.id">
+                    {{ ee.name }}
+                </option>
+            </select>
+        </div>
+
+        <!-- DepartmentId -->
+        <div class="form-group">
+            <label>Departments</label>
+            <div for="departmentId" *ngFor="let dep of deps">
+                <input [value]="dep.id" (change)="ChangeValue($event)" [checked]="dep.isSelected" [value]="dep.id"
+                    type="checkbox" class="form-check-input" formControlName='departmentId'>
+
+                <label class="form-check-label">{{ dep.name_Department }}</label>
+            </div>
+        </div>
+
+
+        <!-- EndAt -->
+        <div class="form-group mb-3">
+            <label for="endAt" class="form-label">End Date</label>
+            <input type="date" class="form-control custom-input" id="endAt" formControlName="EndAt">
+        </div>
+
+        <!-- Is_available -->
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="Is_available" formControlName="Is_available">
+            <label class="form-check-label" for="Is_available">Is Available</label>
+        </div>
+
+        <!-- Is_manager -->
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="Is_manager" formControlName="Is_manager">
+            <label class="form-check-label" for="Is_manager">Is Manager</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" (click)="addDepartmintEmployee()" class="btn custom-button w-100">Submit</button>
+    </form>
+
+    <!-- Employee Data Table -->
+    <div class="mt-2">
+        <h3 class="table-title">Employee Data</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered custom-table">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Department ID</th>
+                        <th>End Date</th>
+                        <th>Is Available</th>
+                        <th>Is Manager</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of EmpDepLst">
+                        <td>{{ employee.employeeId }}</td>
+                        <td>{{ employee.departmentId }}</td>
+                        <td>{{ employee.endAt | date }}</td>
+                        <td>{{ employee.is_available ? 'Yes' : 'No' }}</td>
+                        <td>{{ employee.is_manager ? 'Yes' : 'No' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

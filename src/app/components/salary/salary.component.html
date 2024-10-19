@@ -1,0 +1,63 @@
+<div class="container mt-0 p-3">
+    <h2 class="form-title mb-4">Salary Form</h2>
+    <form [formGroup]="Salary" (ngSubmit)="addSalary()" class="custom-form">
+        <div class="row">
+            <!-- Employee ID -->
+            <div class="col-md-6 mb-3">
+                <label for="employeeId" class="form-label">Employee ID</label>
+                <select id="employeeId" formControlName="employeeId" class="form-select custom-input">
+                    <option value="" disabled selected>Select an employee</option>
+                    <option *ngFor="let ee of emps" [value]="ee.id">
+                        {{ ee.name }}
+                    </option>
+                </select>
+            </div>
+
+            <!-- Date of Salary -->
+            <div class="col-md-6 mb-3">
+                <label for="date_Salarys" class="form-label">Date of Salary</label>
+                <input type="date" class="form-control custom-input" id="date_Salarys" formControlName="date_Salarys">
+            </div>
+
+            <!-- Receipt Date -->
+            <div class="col-md-6 mb-3">
+                <label for="receipt_Date" class="form-label">Receipt Date</label>
+                <input type="date" class="form-control custom-input" id="receipt_Date" formControlName="receipt_Date">
+            </div>
+
+            <!-- Issue Date -->
+            <div class="col-md-6 mb-3">
+                <label for="issue_Date" class="form-label">Issue Date</label>
+                <input type="date" class="form-control custom-input" id="issue_Date" formControlName="issue_Date">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn custom-button w-50">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Salary Data Table -->
+    <h2 class="table-title mt-5">Salary Data</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered custom-table">
+            <thead class="bg-info text-white">
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Date of Salary</th>
+                    <th>Receipt Date</th>
+                    <th>Issue Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let salary of SalaryList">
+                    <td>{{ salary.employeeId }}</td>
+                    <td>{{ salary.date_Salarys | date:'yyyy-MM-dd' }}</td>
+                    <td>{{ salary.receipt_Date | date:'yyyy-MM-dd' }}</td>
+                    <td>{{ salary.issue_Date | date:'yyyy-MM-dd' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

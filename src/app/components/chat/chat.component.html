@@ -1,0 +1,39 @@
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card card-bordered">
+                    <div class="card-header">
+                        <h4 class="card-title"><strong>Chat</strong></h4>
+                        <a class="btn btn-xs btn-secondary" href="#" data-abc="true">Let's Chat App</a>
+                    </div>
+
+                    <form [formGroup]="formgroup">
+                        <div>
+                            <div class="ps-container ps-theme-default ps-active-y" id="chat-content"
+                                style="overflow-y: scroll !important; height:400px !important;">
+                                <div *ngFor="let msg of messages" class="media media-chat"
+                                    [ngClass]="{'media-chat-reverse': msg.userName !== user.decode_Token['UserName']}">
+                                    <img class="avatar"
+                                        src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                                    <div class="media-body">
+                                        <div>
+                                            <p>{{ msg.userName }} :
+                                                {{ msg.text }}</p>
+                                        </div>
+                                        <p class="meta"><time datetime="2007">00:12</time></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="publisher bt-1 border-light">
+                                <input class="publisher-input" type="text" placeholder="Write something"
+                                    formControlName="message">
+                                <button type="submit" (click)="onClicked()"><i class="fa fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
